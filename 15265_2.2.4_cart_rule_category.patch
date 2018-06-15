@@ -1,0 +1,25 @@
+Index: a/vendor/magento/module-catalog/view/adminhtml/web/js/category-checkbox-tree.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- a/vendor/magento/module-catalog/view/adminhtml/web/js/category-checkbox-tree.js
++++ b/vendor/magento/module-catalog/view/adminhtml/web/js/category-checkbox-tree.js
+@@ -168,7 +168,7 @@ define([
+                 }
+ 
+                 if (parent && config && config.length) {
+-                    for (i = 0; i < config.length; i++) {
++                    for (var i = 0; i < config.length; i++) {
+                         categoryLoader.processCategoryTree(parent, config, i);
+                     }
+                 }
+@@ -185,7 +185,7 @@ define([
+                 if ((node.childNodes.length > 0) || (node.loaded === false && node.loading === false)) {
+                     hash.children = [];
+ 
+-                    for (i = 0, len = node.childNodes.length; i < len; i++) {
++                    for (var i = 0, len = node.childNodes.length; i < len; i++) {
+                         /* eslint-disable */
+                         if (!hash.children) {
+                             hash.children = [];
