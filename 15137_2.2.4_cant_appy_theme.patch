@@ -1,0 +1,15 @@
+Index: a/vendor/magento/module-theme/Model/Design/Config/Validator.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- a/vendor/magento/module-theme/Model/Design/Config/Validator.php
++++ b/vendor/magento/module-theme/Model/Design/Config/Validator.php
+@@ -114,7 +114,6 @@ private function getTemplateText($templateId, DesignConfigInterface $designConfi
+         if (is_numeric($templateId)) {
+             $template->load($templateId);
+         } else {
+-            $template->setForcedArea($templateId);
+             $template->loadDefault($templateId);
+         }
+         $text = $template->getTemplateText();
