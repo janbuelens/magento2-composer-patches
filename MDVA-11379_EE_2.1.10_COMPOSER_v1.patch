@@ -20,6 +20,7 @@ index 7b4ecf5ffe9..67018e51e08 100644
 +            function ($attribute) {
 +                return $attribute->getFrontendLabel() &&
 +                    $attribute->getFrontendInput() !== 'text' &&
++                    $attribute->getUsedInProductListing() === "1" &&
 +                    $attribute->getAttributeCode() !== ProductInterface::STATUS;
 +            }
 +        );
