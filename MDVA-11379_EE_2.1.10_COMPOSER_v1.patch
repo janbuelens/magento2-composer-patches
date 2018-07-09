@@ -11,7 +11,7 @@ index 7b4ecf5ffe9..67018e51e08 100644
  /**
   * Class Product
   */
-@@ -77,12 +79,17 @@ class Product extends \Magento\Rule\Model\Condition\Product\AbstractProduct
+@@ -77,12 +79,18 @@ class Product extends \Magento\Rule\Model\Condition\Product\AbstractProduct
      public function loadAttributeOptions()
      {
          $productAttributes = $this->_productResource->loadAllAttributes()->getAttributesByCode();
