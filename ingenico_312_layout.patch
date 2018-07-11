@@ -1,0 +1,13 @@
+diff --git a/vendor/ingenico/library-ops-m2/view/frontend/layout/ops_retry_payment.xml b/view/frontend/layout/ops_retry_payment.xml
+index 9ad25e0..1c34727 100644
+--- a/vendor/ingenico/library-ops-m2/view/frontend/layout/ops_retry_payment.xml
++++ b/vendor/ingenico/library-ops-m2/view/frontend/layout/ops_retry_payment.xml
+@@ -40,7 +40,7 @@
+                 </block>
+             </container>
+             <block class="Magento\Framework\View\Element\Template" name="additional.product.info" template="Magento_Theme::template.phtml"/>
+-            <block class="Netresearch\OPS\Block\RetryPayment" as="retry.payment" cacheable="false" after="static-information" template="Netresearch_OPS::retry/payments.phtml">
++            <block class="Netresearch\OPS\Block\RetryPayment" as="retry.payment" cacheable="false" template="Netresearch_OPS::retry/payments.phtml">
+                 <arguments>
+                     <argument name="jsLayout" xsi:type="array">
+                         <item name="components" xsi:type="array">
