@@ -1,0 +1,18 @@
+diff --git a/vendor/magento/module-catalog/Helper/Product/View.php b/Helper/Product/View.php
+index cc1808d..0a278dd 100644
+--- a/vendor/magento/module-catalog/Helper/Product/View.php
++++ b/vendor/magento/module-catalog/Helper/Product/View.php
+@@ -113,10 +113,9 @@ class View extends \Magento\Framework\App\Helper\AbstractHelper
+     {
+         $pageConfig = $resultPage->getConfig();
+ 
+-        $title = $product->getMetaTitle();
+-        if ($title) {
+-            $pageConfig->getTitle()->set($title);
+-        }
++	$metaTitle = $product->getMetaTitle();
++	$pageConfig->setMetaTitle($metaTitle);
++	$pageConfig->getTitle()->set($metaTitle ?: $product->getName());
+ 
+         $keyword = $product->getMetaKeyword();
+         $currentCategory = $this->_coreRegistry->registry('current_category');
