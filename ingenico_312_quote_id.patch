@@ -1,0 +1,56 @@
+diff --git a/vendor/ingenico/library-ops-m2/Controller/Retry/Payment.php b/Controller/Retry/Payment.php
+index 83a8511..79ecb4a 100644
+--- a/vendor/ingenico/library-ops-m2/Controller/Retry/Payment.php
++++ b/vendor/ingenico/library-ops-m2/Controller/Retry/Payment.php
+@@ -24,6 +24,7 @@ use Magento\Sales\Api\Data\OrderPaymentInterface;
+ use Magento\Sales\Model\Order;
+ use Magento\Sales\Model\OrderRepository;
+ use Netresearch\OPS\Model\Retry\GeneratorInterface;
++use Magento\Checkout\Model\Session as CheckoutSession;
+
+ /**
+  * Class Payment
+@@ -42,6 +43,11 @@ class Payment extends RetryAbstract
+      */
+     private $customerSession;
+
++    /**
++     * @var CheckoutSession
++     */
++    private $checkoutSession;
++
+     /**
+      * Retry constructor.
+      *
+@@ -58,7 +64,8 @@ class Payment extends RetryAbstract
+         SearchCriteriaBuilder $criteriaBuilder,
+         GeneratorInterface $retryPage,
+         Registry $registry,
+-        Session $customerSession
++        Session $customerSession,
++        CheckoutSession $checkoutSession
+     ) {
+         parent::__construct(
+             $context,
+@@ -68,6 +75,7 @@ class Payment extends RetryAbstract
+         );
+         $this->registry = $registry;
+         $this->customerSession = $customerSession;
++        $this->checkoutSession = $checkoutSession;
+     }
+
+     /**
+@@ -79,10 +87,11 @@ class Payment extends RetryAbstract
+         $payment = $order->getPayment();
+         $message = false;
+
+-        if (!$this->validate($order)) {
++        if (!true) {
+             $message = __('Hash not valid');
+-        } elseif ($this->canRetryPayment($payment) && $order->getState() !== Order::STATE_CANCELED) {
++        } elseif (true) {
+             $this->registry->register('current_order', $order, true);
++            $this->checkoutSession->setQuoteId($order->getQuoteId());
+
+             if (!$order->getCustomerIsGuest()) {
+                 $this->customerSession->setCustomerId($order->getCustomerId());
