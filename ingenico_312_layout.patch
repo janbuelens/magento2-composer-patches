@@ -7,7 +7,7 @@ index 9ad25e0..1c34727 100644
              </container>
              <block class="Magento\Framework\View\Element\Template" name="additional.product.info" template="Magento_Theme::template.phtml"/>
 -            <block class="Netresearch\OPS\Block\RetryPayment" as="retry.payment" cacheable="false" after="static-information" template="Netresearch_OPS::retry/payments.phtml">
-+            <block class="Netresearch\OPS\Block\RetryPayment" as="retry.payment" cacheable="false" template="Netresearch_OPS::retry/payments.phtml">
++            <block class="Netresearch\OPS\Block\RetryPayment" as="retry.payment" cacheable="false" after="additional.product.info" template="Netresearch_OPS::retry/payments.phtml">
                  <arguments>
                      <argument name="jsLayout" xsi:type="array">
                          <item name="components" xsi:type="array">
