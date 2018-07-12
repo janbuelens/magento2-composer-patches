@@ -11,7 +11,6 @@ index cc1808d..0a278dd 100644
 -            $pageConfig->getTitle()->set($title);
 -        }
 +	$metaTitle = $product->getMetaTitle();
-+	$pageConfig->setMetaTitle($metaTitle);
 +	$pageConfig->getTitle()->set($metaTitle ?: $product->getName());
  
          $keyword = $product->getMetaKeyword();
