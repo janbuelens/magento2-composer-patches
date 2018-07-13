@@ -44,11 +44,9 @@ index 83a8511..79ecb4a 100644
          $payment = $order->getPayment();
          $message = false;
 
--        if (!$this->validate($order)) {
-+        if (!true) {
+         if (!$this->validate($order)) {
              $message = __('Hash not valid');
--        } elseif ($this->canRetryPayment($payment) && $order->getState() !== Order::STATE_CANCELED) {
-+        } elseif (true) {
+         } elseif ($this->canRetryPayment($payment) && $order->getState() !== Order::STATE_CANCELED) {
              $this->registry->register('current_order', $order, true);
 +            $this->checkoutSession->setQuoteId($order->getQuoteId());
 
