@@ -1,4 +1,4 @@
-diff --git a/vendor/ingenico/library-ops-m2/Controller/Retry/Payment.php b/Controller/Retry/Payment.php
+diff --git a/vendor/ingenico/library-ops-m2/Controller/Retry/Payment.php b/vendor/ingenico/library-ops-m2/Controller/Retry/Payment.php
 index 83a8511..abe103c 100644
 --- a/vendor/ingenico/library-ops-m2/Controller/Retry/Payment.php
 +++ b/vendor/ingenico/library-ops-m2/Controller/Retry/Payment.php
