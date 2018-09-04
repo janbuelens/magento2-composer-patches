@@ -1,0 +1,22 @@
+diff --git a/vendor/magento/module-quote/Observer/Frontend/Quote/Address/VatValidator.php b/vendor/magento/module-quote/Observer/Frontend/Quote/Address/VatValidator.php
+index b8801ca..41da320 100644
+--- a/vendor/magento/module-quote/Observer/Frontend/Quote/Address/VatValidator.php
++++ b/vendor/magento/module-quote/Observer/Frontend/Quote/Address/VatValidator.php
+@@ -63,6 +63,17 @@ class VatValidator
+                 $merchantVatNumber
+             );
+
++            if (is_array($quoteAddress->getRegion())) {
++                $regionData = $quoteAddress->getRegion();
++                if (array_key_exists('region_code', $regionData)) {
++                    $quoteAddress->setRegionCode($regionData['region_code']);
++                }
++                if (array_key_exists('region_id', $regionData)) {
++                    $quoteAddress->setRegionId($regionData['region_id']);
++                }
++                $quoteAddress->setRegion(null);
++            }
++
+             // Store validation results in corresponding quote address
+             $quoteAddress->setVatIsValid((int)$validationResult->getIsValid());
+             $quoteAddress->setVatRequestId($validationResult->getRequestIdentifier());
