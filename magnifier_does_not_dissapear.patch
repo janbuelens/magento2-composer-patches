@@ -1,0 +1,13 @@
+diff --git a/vendor/magento/magento2-base/lib/web/magnifier/magnifier.js b/vendor/magento/magento2-base/lib/web/magnifier/magnifier.js
+index c475364..958af0e 100644
+--- a/vendor/magento/magento2-base/lib/web/magnifier/magnifier.js
++++ b/vendor/magento/magento2-base/lib/web/magnifier/magnifier.js
+@@ -588,7 +588,7 @@
+             _init($box, gOptions);
+         });
+
+-        $box.on('mousemove', onMousemove);
++        $(document).on('mousemove', onMousemove);
+         _init($box, gOptions);
+
+     }
